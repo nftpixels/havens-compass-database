@@ -39,7 +39,7 @@ const contractABI = [
 ];
 
 // Set the interval for checking ownership and removing roles (in hours)
-const intervalInHours = 24;
+const intervalInHours = 6;
 
 // Define the function to check ownership and remove roles
 const checkOwnershipAndRemoveRoles = async () => {
@@ -103,6 +103,8 @@ const checkOwnershipAndRemoveRoles = async () => {
 
         // Log a message indicating the successful completion of the task
         console.log('Task completed successfully.');
+
+        console.log('Task will run again in 6 hours.');
 
         // Schedule the next execution after the specified interval (e.g., 24 hours)
         setTimeout(checkOwnershipAndRemoveRoles, intervalInHours * 60 * 60 * 1000);
